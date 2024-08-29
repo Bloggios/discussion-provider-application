@@ -1,0 +1,70 @@
+server:
+  port: 7004
+  servlet:
+    context-path: /discussion-provider
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+  application:
+    name: discussion-provider-application
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE}?currentSchema=discussi-provider
+    hikari:
+      username: ${POSTGRES_USERNAME}
+      password: ${POSTGRES_PASSWORD}
+      maximum-pool-size: ${POSTGRES_POOL_SIZE:100}
+      minimum-idle: ${POSTGRES_IDLE:7}
+      leak-detection-threshold: 120000
+      max-lifetime: 1800000
+      idle-timeout: 600000
+      connection-timeout: 600000
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+application:
+  version: @version@
+  profile: ${ACTIVE_PROFILE}
+  base-path: ${BASE_PATH}
+  environment:
+    assets: https://assets.bloggios.in/discussion-provider
+
+elasticsearch:
+  server: ${ES_SERVER:localhost}
+  username: ${ES_USERNAME:root}
+  password: ${ES_PASSWORD:root}
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+    enabled: false
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+security-config:
+  exclude:
+    paths:
+      - /actuator/**
+      - /topics/**
+      - /unauth/**
+  cookie:
+    cookie-name: ${ACTIVE_PROFILE:local}.bg-refresh-mgmt
+    paths:
+      - /user-provider/profile-auth/**
+  key-provider:
+    public-key: classpath:security/pubkey.pem
+    private-key: classpath:security/privkey.pem
+
+discussi-files:
+  discussi-images: ${BLOG_IMAGES_PATH:files/discussi-provider/discussi}
+  cover-images: ${COVER_IMAGES_PATH:files/discussi-provider/cover}
