@@ -49,7 +49,7 @@ public class TaskExecutorConfiguration {
         executor.setCorePoolSize(5);
         executor.setMaxPoolSize(10);
         executor.setQueueCapacity(20);
-        executor.setThreadNamePrefix("auth-internal-pool-");
+        executor.setThreadNamePrefix("discussion-internal-pool-");
         executor.setAllowCoreThreadTimeOut(true);
         executor.setKeepAliveSeconds(60);
         executor.initialize();
@@ -62,7 +62,7 @@ public class TaskExecutorConfiguration {
         executor.setCorePoolSize(7);
         executor.setMaxPoolSize(16);
         executor.setQueueCapacity(40);
-        executor.setThreadNamePrefix("auth-external-pool-");
+        executor.setThreadNamePrefix("discussion-external-pool-");
         executor.setAllowCoreThreadTimeOut(true);
         executor.setKeepAliveSeconds(60);
         executor.initialize();

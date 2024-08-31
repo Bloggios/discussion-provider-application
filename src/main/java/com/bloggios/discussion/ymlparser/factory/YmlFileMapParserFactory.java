@@ -49,7 +49,10 @@ public class YmlFileMapParserFactory implements PropertySourceFactory {
         YamlPropertiesFactoryBean factoryBean = new YamlPropertiesFactoryBean();
         factoryBean.setResources(resource.getResource());
         Properties object = factoryBean.getObject();
+        String filename = resource.getResource().getFilename();
         assert object != null;
-        return new PropertiesPropertySource(Objects.requireNonNull(resource.getResource().getFilename()), object);
+        return new PropertiesPropertySource(
+                Objects.requireNonNull(filename), object
+        );
     }
 }

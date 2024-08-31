@@ -1,5 +1,5 @@
 server:
-  port: 7004
+  port: 7005
   servlet:
     context-path: /discussion-provider
 spring:
@@ -9,7 +9,7 @@ spring:
   application:
     name: discussion-provider-application
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE}?currentSchema=discussi-provider
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE}?currentSchema=discussion-provider
     hikari:
       username: ${POSTGRES_USERNAME}
       password: ${POSTGRES_PASSWORD}
@@ -57,6 +57,17 @@ security-config:
       - /actuator/**
       - /topics/**
       - /unauth/**
+      - /api/v1/auth/**"
+      - /v2/api-docs
+      - /swagger-resources
+      - /swagger-resources/**
+      - /configuration/ui
+      - /configuration/security
+      - /swagger-ui/**
+      - /webjars/**
+      - /swagger-ui.html
+      - /v3/api-docs
+      - /v3/api-docs/**
   cookie:
     cookie-name: ${ACTIVE_PROFILE:local}.bg-refresh-mgmt
     paths:
@@ -68,3 +79,27 @@ security-config:
 discussi-files:
   discussi-images: ${BLOG_IMAGES_PATH:files/discussi-provider/discussi}
   cover-images: ${COVER_IMAGES_PATH:files/discussi-provider/cover}
+
+swagger-properties:
+  group-name:
+    definition: ${spring.application.name}
+    scan-packages: com.bloggios.discussion
+  info:
+    title: Bloggios - Discussion Provider Application
+    version: @version@
+    description: API Documentation for discussion-provider-application
+    summary: The Blog Provider Application, developed using Java 17 and Spring Boot, serves as a comprehensive backend microservice for Bloggios. It offers a full suite of blogging features, including commenting, likes, and more, to enhance user engagement and content management.
+    contact:
+      name: Bloggios
+      email: support@bloggios.com
+      url: https://www.bloggios.com
+    license:
+      name: Apache 2 License
+      url: https://github.com/Bloggios/blog-provider-application/blob/main/LICENSE
+  servers:
+    local:
+      name: Local Port
+      url: http://localhost:${server.port}/discussion-provider
+    production:
+      name: Hosted Port
+      url: https://api.bloggios.com/discussion-provider
