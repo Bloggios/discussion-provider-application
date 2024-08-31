@@ -1,7 +1,5 @@
 package com.bloggios.discussion.constants;
 
-import lombok.experimental.UtilityClass;
-
 /**
  * Owner - Rohit Parihar
  * Author - rohit
@@ -16,4 +14,11 @@ public class DataExceptionCodes {
     public static final String TITLE_MANDATORY = "DE__DISCUSSION-2001";
     public static final String TITLE_WORD_EXCEED = "DE__DISCUSSION-2002";
     public static final String TITLE_LENGTH_EXCEED = "DE__DISCUSSION-2003";
+    public static final String TAGS_NOT_PRESENT = "DE__DISCUSSION-2004";
+    public static final String TAGS_LIMIT_EXCEED = "DE__DISCUSSION-2005";
+    public static final String IMAGES_LIMIT_EXCEEDED = "DE__DISCUSSION-2006";
+    public static final String NOT_IMAGE_TYPE = "DE__DISCUSSION-2007";
+    public static final String IMAGE_SIZE_LIMIT_EXCEED = "DE__DISCUSSION-2008";
+    public static final String INVALID_IMAGE_NAME = "DE__DISCUSSION-2009";
+    public static final String DUPLICATE_IMAGES_NOT_ALLOWED_TO_UPLOAD = "DE__DISCUSSION-2010";
 }

@@ -1,5 +1,6 @@
 package com.bloggios.discussion.payload.request;
 
+import com.bloggios.authenticationconfig.payload.AuthenticatedUser;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.apache.commons.lang.mutable.Mutable;
@@ -29,4 +30,5 @@ public class DiscussionRequest {
     private String detailsText;
     private List<MultipartFile> images;
     private List<String> topics;
+    private AuthenticatedUser authenticatedUser;
 }
