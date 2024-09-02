@@ -3,6 +3,8 @@ package com.bloggios.discussion.implementation;
 import com.bloggios.discussion.payload.request.DiscussionRequest;
 import com.bloggios.discussion.payload.response.ModuleResponse;
 import com.bloggios.discussion.service.DiscussionService;
+import com.bloggios.discussion.validator.implementation.exhibitor.DiscussionRequestExhibitor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +22,10 @@ import java.util.List;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class DiscussionServiceImplementation implements DiscussionService {
+
+    private final DiscussionRequestExhibitor discussionRequestExhibitor;
 
     @Override
     public ModuleResponse addDiscussion(String title, String html, String detailsText, List<MultipartFile> images, List<String> topics) {
@@ -32,6 +37,8 @@ public class DiscussionServiceImplementation implements DiscussionService {
                 .images(images)
                 .topics(topics)
                 .build();
+        discussionRequestExhibitor.validate(discussionRequest);
+
         return null;
     }
 }

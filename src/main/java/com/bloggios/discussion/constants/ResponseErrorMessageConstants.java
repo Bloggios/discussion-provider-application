@@ -15,4 +15,6 @@ import lombok.experimental.UtilityClass;
 public class ResponseErrorMessageConstants {
 
     public static final String TAGS_NOT_PRESENT = "%s tag(s) are not exist in Bloggios";
+    public static final String IMAGES_NULL = "%s images are not present";
+    public static final String IMAGES_LIST_SIZE_NOT_MATCHED_WITH_HTML = "Images to uploaded must be %s";
 }

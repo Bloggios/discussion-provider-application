@@ -1,8 +1,11 @@
 package com.bloggios.discussion.controller;
 
 import com.bloggios.discussion.constants.EndpointConstants;
+import com.bloggios.discussion.exception.payloads.BadRequestException;
 import com.bloggios.discussion.payload.response.TopicsListResponse;
 import com.bloggios.discussion.service.TopicService;
+import com.bloggios.discussion.utils.AsyncUtils;
+import com.google.inject.internal.cglib.core.$CodeGenerationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Owner - Rohit Parihar
@@ -31,8 +35,6 @@ public class TopicsController {
 
     @GetMapping
     public ResponseEntity<TopicsListResponse> getTopicsList() {
-        CompletableFuture<TopicsListResponse> topicsListResponseCompletableFuture = topicService.topicsList();
-        TopicsListResponse join = topicsListResponseCompletableFuture.join();
-        return ResponseEntity.ok(join);
+        return ResponseEntity.ok(AsyncUtils.getAsyncResult(topicService.topicsList()));
     }
 }

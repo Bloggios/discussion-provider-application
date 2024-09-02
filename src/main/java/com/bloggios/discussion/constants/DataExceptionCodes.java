@@ -21,4 +21,8 @@ public class DataExceptionCodes {
     public static final String IMAGE_SIZE_LIMIT_EXCEED = "DE__DISCUSSION-2008";
     public static final String INVALID_IMAGE_NAME = "DE__DISCUSSION-2009";
     public static final String DUPLICATE_IMAGES_NOT_ALLOWED_TO_UPLOAD = "DE__DISCUSSION-2010";
+    public static final String DETAILS_NOT_PRESENT = "DE__DISCUSSION-2011";
+    public static final String IMAGES_LIST_SIZE_NOT_MATCHED_WITH_HTML = "DE__DISCUSSION-2012";
+    public static final String IMAGES_NULL = "DE__DISCUSSION-2014";
+    public static final String DISCUSSION_DETAILS_LIMIT_EXCEED = "DE__DISCUSSION-2015";
 }
