@@ -48,4 +48,5 @@ public class InternalExceptionCodes {
     public static final String JSON_DESERIALIZATION = "IE__DISCUSSION-1001";
     public static final String INTERNAL_ERROR = "IE__DISCUSSION-1002";
     public static final String FAILED_TO_FETCH_EXCEPTION_CODES = "IE__DISCUSSION-1003";
+    public static final String ASYNC_IMAGE_UPLOAD_ERROR = "IE__DISCUSSION-1004";
 }
