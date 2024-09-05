@@ -1,12 +1,10 @@
 package com.bloggios.discussion.modal.embeddable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 
 /**
  * Owner - Rohit Parihar

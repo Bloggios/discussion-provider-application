@@ -1,7 +1,5 @@
 package com.bloggios.discussion.validator;
 
-import com.bloggios.discussion.payload.request.DiscussionRequest;
-
 /**
  * Owner - Rohit Parihar
  * Author - rohit

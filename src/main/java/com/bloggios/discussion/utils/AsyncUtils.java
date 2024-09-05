@@ -2,7 +2,6 @@ package com.bloggios.discussion.utils;
 
 import com.bloggios.discussion.constants.InternalExceptionCodes;
 import com.bloggios.discussion.exception.payloads.BadRequestException;
-import com.bloggios.discussion.exception.payloads.InitializationException;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

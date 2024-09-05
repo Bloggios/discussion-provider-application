@@ -2,13 +2,11 @@ package com.bloggios.discussion.validator.implementation.businessvalidator;
 
 import com.bloggios.discussion.constants.DataExceptionCodes;
 import com.bloggios.discussion.exception.payloads.BadRequestException;
-import com.bloggios.discussion.payload.request.DiscussionRequest;
 import com.bloggios.discussion.utils.WordsCounter;
 import com.bloggios.discussion.validator.BusinessValidator;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
-import javax.persistence.Column;
 import java.util.Objects;
 
 /**

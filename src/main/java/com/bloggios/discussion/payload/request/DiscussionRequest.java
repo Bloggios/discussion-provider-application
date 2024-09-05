@@ -3,9 +3,9 @@ package com.bloggios.discussion.payload.request;
 import com.bloggios.authenticationconfig.payload.AuthenticatedUser;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import org.apache.commons.lang.mutable.Mutable;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -31,4 +31,5 @@ public class DiscussionRequest {
     private List<MultipartFile> images;
     private List<String> topics;
     private AuthenticatedUser authenticatedUser;
+    HttpServletRequest httpServletRequest;
 }

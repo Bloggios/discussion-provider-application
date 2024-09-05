@@ -8,7 +8,6 @@ import com.bloggios.discussion.modal.embeddable.ImageLinksEntity;
 import com.bloggios.discussion.payload.record.UploadImagePayloadRecord;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
